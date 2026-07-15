@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="메디힘 경영사항 공지, 성과 현황, 비용 현황 및 타운홀 자료를 통합 제공하는 사내 경영정보 대시보드" />
   <meta name="theme-color" content="#7b183f" />
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
@@ -1870,6 +1870,649 @@
       }
     }
 
+
+    /* =========================================================
+       Galaxy Z Fold 6 및 모바일 접근성 최적화
+       - 커버 화면: 약 320~480 CSS px
+       - 펼친 화면: 약 600~920 CSS px
+       ========================================================= */
+
+    .sidebar-close,
+    .sidebar-backdrop,
+    .mobile-bottom-nav,
+    .notice-enter {
+      display: none;
+    }
+
+    button,
+    a,
+    input,
+    select {
+      touch-action: manipulation;
+    }
+
+    @media (max-width: 920px) {
+      html {
+        scroll-padding-top: 76px;
+      }
+
+      body:not(.auth-locked) {
+        padding-bottom: calc(72px + env(safe-area-inset-bottom));
+      }
+
+      .auth-screen {
+        padding:
+          calc(16px + env(safe-area-inset-top))
+          14px
+          calc(16px + env(safe-area-inset-bottom));
+      }
+
+      .auth-card {
+        width: min(100%, 430px);
+        padding: 28px 24px;
+        border-radius: 20px;
+      }
+
+      .auth-input {
+        height: 56px;
+        font-size: 1.05rem;
+      }
+
+      .auth-toggle {
+        width: 44px;
+        height: 44px;
+      }
+
+      .auth-submit {
+        min-height: 54px;
+      }
+
+      .sidebar {
+        z-index: 92;
+        width: min(86vw, 320px);
+        max-width: 320px;
+        padding:
+          calc(18px + env(safe-area-inset-top))
+          18px
+          calc(22px + env(safe-area-inset-bottom));
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        box-shadow: 18px 0 50px rgba(31, 7, 20, 0.28);
+      }
+
+      .sidebar.open {
+        width: min(86vw, 320px);
+      }
+
+      .sidebar .brand {
+        padding-right: 50px;
+      }
+
+      .sidebar-close {
+        position: absolute;
+        top: calc(14px + env(safe-area-inset-top));
+        right: 12px;
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border: 1px solid rgba(255,255,255,0.18);
+        border-radius: 13px;
+        color: #ffffff;
+        background: rgba(255,255,255,0.11);
+        cursor: pointer;
+      }
+
+      .sidebar-close svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .sidebar-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 86;
+        display: block;
+        pointer-events: none;
+        background: rgba(13, 18, 27, 0.54);
+        opacity: 0;
+        backdrop-filter: blur(2px);
+        transition: opacity 0.22s ease;
+      }
+
+      .sidebar-backdrop.open {
+        pointer-events: auto;
+        opacity: 1;
+      }
+
+      .nav-link {
+        min-height: 52px;
+        padding: 14px;
+        font-size: 0.96rem;
+      }
+
+      .nav-link svg {
+        width: 21px;
+        height: 21px;
+      }
+
+      .topbar {
+        min-height: calc(64px + env(safe-area-inset-top));
+        padding:
+          env(safe-area-inset-top)
+          max(14px, env(safe-area-inset-right))
+          0
+          max(14px, env(safe-area-inset-left));
+      }
+
+      .mobile-menu {
+        width: 48px;
+        height: 48px;
+        flex: 0 0 auto;
+      }
+
+      .mobile-menu svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .auth-logout {
+        min-width: 48px;
+        min-height: 44px;
+        justify-content: center;
+        padding: 0 12px;
+      }
+
+      .content {
+        width: min(calc(100% - 24px), var(--max));
+        padding-top: 22px;
+        padding-bottom: 34px;
+      }
+
+      .section {
+        scroll-margin-top: 82px;
+      }
+
+      .hero {
+        padding: 32px 26px;
+      }
+
+      .hero p {
+        max-width: 680px;
+      }
+
+      .status-card,
+      .shortcut,
+      .governance-card,
+      .side-card {
+        min-height: 0;
+      }
+
+      .shortcut {
+        min-height: 218px;
+      }
+
+      .board-toolbar {
+        position: sticky;
+        top: calc(64px + env(safe-area-inset-top));
+        z-index: 8;
+        background: rgba(255,255,255,0.96);
+        backdrop-filter: blur(12px);
+      }
+
+      .tabs {
+        margin: 0 -4px;
+        padding: 1px 4px 5px;
+        scroll-snap-type: x proximity;
+      }
+
+      .tab {
+        min-height: 44px;
+        padding: 10px 15px;
+        scroll-snap-align: start;
+        font-size: 0.82rem;
+      }
+
+      .search-input,
+      .month-select {
+        height: 48px;
+        font-size: 0.88rem;
+      }
+
+      .archive-link {
+        min-height: 48px;
+      }
+
+      .notice-row {
+        min-height: 74px;
+        padding: 18px 20px;
+      }
+
+      .notice-title strong {
+        font-size: 0.96rem;
+      }
+
+      .notice-title p {
+        font-size: 0.8rem;
+      }
+
+      .mobile-bottom-nav {
+        position: fixed;
+        inset: auto 0 0;
+        z-index: 78;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        min-height: calc(66px + env(safe-area-inset-bottom));
+        padding:
+          4px
+          max(6px, env(safe-area-inset-right))
+          env(safe-area-inset-bottom)
+          max(6px, env(safe-area-inset-left));
+        border-top: 1px solid rgba(210, 217, 225, 0.95);
+        background: rgba(255,255,255,0.97);
+        box-shadow: 0 -10px 30px rgba(20,31,45,0.1);
+        backdrop-filter: blur(16px);
+      }
+
+      .mobile-bottom-link {
+        position: relative;
+        display: flex;
+        min-width: 0;
+        min-height: 60px;
+        flex-direction: column;
+        gap: 3px;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 12px;
+        color: var(--muted);
+        background: transparent;
+        font-size: 0.68rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .mobile-bottom-link svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .mobile-bottom-link:hover,
+      .mobile-bottom-link:focus-visible,
+      .mobile-bottom-link.active {
+        color: var(--primary);
+        background: var(--primary-soft);
+        outline: none;
+      }
+
+      .detail-topbar {
+        min-height: calc(64px + env(safe-area-inset-top));
+        padding:
+          env(safe-area-inset-top)
+          max(12px, env(safe-area-inset-right))
+          0
+          max(12px, env(safe-area-inset-left));
+      }
+
+      .detail-back {
+        min-height: 48px;
+        padding: 0 8px;
+      }
+
+      .detail-side-card,
+      .detail-nav button,
+      .detail-link {
+        min-height: 48px;
+      }
+
+      .detail-table-wrap {
+        position: relative;
+        margin-right: -2px;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+      }
+
+      .detail-table-wrap::after {
+        content: "좌우로 밀어 표 전체 보기";
+        position: sticky;
+        right: 8px;
+        bottom: 6px;
+        float: right;
+        margin: 6px;
+        padding: 4px 8px;
+        border-radius: 999px;
+        color: var(--muted);
+        background: rgba(255,255,255,0.92);
+        box-shadow: 0 2px 10px rgba(20,31,45,0.08);
+        font-size: 0.65rem;
+        pointer-events: none;
+      }
+    }
+
+    /* Galaxy Fold 커버 화면 및 일반 소형 스마트폰 */
+    @media (max-width: 480px) {
+      .topbar-left {
+        gap: 8px;
+        min-width: 0;
+      }
+
+      .breadcrumb {
+        min-width: 0;
+        overflow: hidden;
+        font-size: 0;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .breadcrumb strong {
+        font-size: 0.88rem;
+      }
+
+      .topbar-right {
+        gap: 6px;
+      }
+
+      .auth-logout {
+        min-width: 46px;
+        font-size: 0.72rem;
+      }
+
+      .content {
+        width: calc(100% - 16px);
+        padding-top: 12px;
+      }
+
+      .hero {
+        padding: 26px 20px;
+        border-radius: 17px;
+      }
+
+      .hero-kicker {
+        margin-bottom: 12px;
+        font-size: 0.66rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.72rem, 8.3vw, 2.15rem);
+        line-height: 1.2;
+      }
+
+      .hero p {
+        margin-top: 14px;
+        font-size: 0.88rem;
+        line-height: 1.65;
+      }
+
+      .hero-principles {
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .hero-principle {
+        padding: 13px 14px;
+      }
+
+      .section-head {
+        gap: 8px;
+        margin-bottom: 13px;
+      }
+
+      .section-head h2 {
+        font-size: 1.28rem;
+      }
+
+      .section-head p {
+        font-size: 0.82rem;
+      }
+
+      .status-grid {
+        gap: 10px;
+      }
+
+      .status-card {
+        padding: 18px;
+      }
+
+      .status-value {
+        margin-top: 11px;
+        font-size: 1.28rem;
+      }
+
+      .shortcut-grid {
+        gap: 12px;
+      }
+
+      .shortcut {
+        min-height: 205px;
+        padding: 21px;
+      }
+
+      .shortcut h3 {
+        margin-top: 18px;
+      }
+
+      .shortcut-footer {
+        left: 21px;
+        bottom: 20px;
+      }
+
+      .board-card {
+        border: 0;
+        overflow: visible;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .board-toolbar {
+        top: calc(64px + env(safe-area-inset-top));
+        margin: 0 -1px 10px;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+      }
+
+      .board-list {
+        display: grid;
+        min-height: 0;
+        gap: 10px;
+      }
+
+      .notice-row,
+      .notice-row.is-important {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+          "category date"
+          "title title";
+        gap: 11px 10px;
+        min-height: 0;
+        margin: 0;
+        padding: 17px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: var(--surface);
+        box-shadow: 0 5px 18px rgba(20,31,45,0.045);
+      }
+
+      .notice-row.is-important {
+        border-color: #e7b7cb;
+        background: #fffafb;
+      }
+
+      .notice-row:active {
+        transform: scale(0.992);
+      }
+
+      .notice-row .category {
+        grid-area: category;
+      }
+
+      .notice-title {
+        grid-area: title;
+      }
+
+      .notice-date {
+        grid-area: date;
+        align-self: center;
+        text-align: right;
+      }
+
+      .notice-owner {
+        display: none;
+      }
+
+      .notice-title strong {
+        align-items: flex-start;
+        white-space: normal;
+        line-height: 1.45;
+      }
+
+      .notice-title p {
+        display: -webkit-box;
+        margin-top: 7px;
+        overflow: hidden;
+        white-space: normal;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-height: 1.55;
+      }
+
+      .notice-enter {
+        display: inline-flex;
+        gap: 5px;
+        align-items: center;
+        margin-top: 12px;
+        color: var(--primary);
+        font-size: 0.76rem;
+        font-weight: 900;
+      }
+
+      .board-side {
+        gap: 12px;
+      }
+
+      .side-card {
+        padding: 19px;
+      }
+
+      .governance-grid {
+        gap: 10px;
+      }
+
+      .governance-card {
+        min-height: 166px;
+        padding: 20px;
+      }
+
+      .footer {
+        padding-bottom: 10px;
+      }
+
+      .modal-backdrop {
+        align-items: end;
+        padding: 0;
+      }
+
+      .modal {
+        width: 100%;
+        max-height: 88dvh;
+        border-radius: 20px 20px 0 0;
+      }
+
+      .modal-head {
+        min-height: 60px;
+      }
+
+      .modal-close {
+        width: 44px;
+        height: 44px;
+      }
+
+      .detail-topbar .update-badge {
+        display: none;
+      }
+
+      .detail-back-label {
+        max-width: 156px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .detail-shell {
+        width: calc(100% - 16px);
+        padding: 14px 0 40px;
+      }
+
+      .detail-breadcrumb {
+        margin: 0 4px 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .detail-hero {
+        padding: 23px 19px;
+      }
+
+      .detail-hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .detail-hero p {
+        font-size: 0.88rem;
+      }
+
+      .detail-main {
+        padding: 22px 18px;
+      }
+
+      .detail-main h2 {
+        font-size: 1.22rem;
+      }
+
+      .detail-subsection {
+        padding: 16px;
+      }
+
+      .detail-summary-box {
+        padding: 17px;
+      }
+
+      .detail-lunch {
+        padding: 16px;
+      }
+
+      .detail-side-card {
+        padding: 19px;
+      }
+    }
+
+    /* 펼친 Galaxy Fold 및 중형 태블릿 폭 */
+    @media (min-width: 600px) and (max-width: 920px) {
+      .content {
+        width: min(calc(100% - 36px), var(--max));
+      }
+
+      .hero-principles,
+      .status-grid,
+      .governance-grid,
+      .board-side {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .shortcut-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .notice-row {
+        min-height: 82px;
+      }
+
+      .detail-shell {
+        width: min(calc(100% - 30px), 1180px);
+      }
+    }
+
     @media print {
       .sidebar,
       .topbar,
@@ -1944,6 +2587,12 @@
         </div>
       </a>
 
+      <button class="sidebar-close" id="sidebarClose" type="button" aria-label="메뉴 닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+          <path d="m6 6 12 12M18 6 6 18"/>
+        </svg>
+      </button>
+
       <div class="nav-title">MANAGEMENT</div>
       <nav class="nav-list">
         <a class="nav-link active" href="#home">
@@ -1983,6 +2632,8 @@
         </p>
       </div>
     </aside>
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
 
     <main class="main">
       <header class="topbar">
@@ -2263,6 +2914,39 @@
         </footer>
       </div>
     </main>
+
+    <nav class="mobile-bottom-nav" aria-label="모바일 빠른 메뉴">
+      <a class="mobile-bottom-link active" href="#home" data-mobile-nav="home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5"/><path d="M9.5 20v-6h5v6"/>
+        </svg>
+        <span>홈</span>
+      </a>
+      <a class="mobile-bottom-link" href="https://medihimdash.com" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/>
+        </svg>
+        <span>성과</span>
+      </a>
+      <a class="mobile-bottom-link" href="https://spend.medihimdash.com" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"/><path d="M15.5 8.5h-5a2 2 0 0 0 0 4h3a2 2 0 0 1 0 4h-5M12 6v12"/>
+        </svg>
+        <span>비용</span>
+      </a>
+      <a class="mobile-bottom-link" href="#notices" data-mobile-nav="notices">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h8M8 17h5"/>
+        </svg>
+        <span>공지</span>
+      </a>
+      <button class="mobile-bottom-link" id="bottomMenu" type="button" aria-label="전체 메뉴 열기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+        <span>메뉴</span>
+      </button>
+    </nav>
   </div>
 
   <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -2290,7 +2974,7 @@
     <header class="detail-topbar">
       <button class="detail-back" id="detailBack" type="button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="m15 18-6-6 6-6"/></svg>
-        경영정보센터로 돌아가기
+        <span class="detail-back-label">경영정보센터로 돌아가기</span>
       </button>
       <div style="display:flex; gap:10px; align-items:center;">
         <span class="update-badge"><span class="update-dot"></span>공지 상세</span>
@@ -2385,6 +3069,9 @@
       }
 
       function lock() {
+        if (typeof window.medihimCloseMobileMenu === "function") {
+          window.medihimCloseMobileMenu();
+        }
         sessionStorage.removeItem(AUTH_KEY);
         body.classList.add("auth-locked");
         passwordInput.value = "";
@@ -2497,7 +3184,7 @@
         effectiveDate: "2026년 7월 ○일(화)",
         time: "오전 9시~12시",
         audience: "메디힘 전 직원",
-        location: "메디힘 오피스 라운지 (전일에 파티션 이동하여 미리 회의 준비 요망)",
+        location: "추후 공지",
         owner: "경영총괄",
         department: "경영지원",
         status: "준비 중",
@@ -2523,7 +3210,7 @@
                 <tbody>
                   <tr>
                     <th>일시</th>
-                    <td>2026년 7월 21일(화) 오전 9시~12시</td>
+                    <td>2026년 7월 ○일(화) 오전 9시~12시</td>
                   </tr>
                   <tr>
                     <th>참석 대상</th>
@@ -2531,7 +3218,7 @@
                   </tr>
                   <tr>
                     <th>장소</th>
-                    <td>메디힘 오피스 라운지 (전일 파티션과 의자등 배치하여 9시 바로 시작 요망)</td>
+                    <td>추후 공지</td>
                   </tr>
                   <tr>
                     <th>진행 방식</th>
@@ -3040,6 +3727,7 @@
               ${notice.title}
             </strong>
             <p>${notice.summary}</p>
+            <span class="notice-enter">상세 내용 보기 <span aria-hidden="true">→</span></span>
           </div>
           <div class="notice-date">${formatDate(notice.date)}</div>
           <div class="notice-owner">${notice.owner}</div>
@@ -3047,7 +3735,14 @@
       `).join("");
 
       document.querySelectorAll(".notice-row").forEach((row) => {
-        const open = () => openModal(Number(row.dataset.id));
+        const open = () => {
+          const id = Number(row.dataset.id);
+          if (window.matchMedia("(max-width: 920px)").matches) {
+            openDetail(id);
+          } else {
+            openModal(id);
+          }
+        };
         row.addEventListener("click", open);
         row.addEventListener("keydown", (event) => {
           if (event.key === "Enter" || event.key === " ") {
@@ -3270,30 +3965,56 @@
       }
     });
 
-    /* 모바일 사이드바 */
+    /* 모바일 사이드바 및 하단 내비게이션 */
     const sidebar = document.getElementById("sidebar");
     const mobileMenu = document.getElementById("mobileMenu");
+    const bottomMenu = document.getElementById("bottomMenu");
+    const sidebarClose = document.getElementById("sidebarClose");
+    const sidebarBackdrop = document.getElementById("sidebarBackdrop");
+    const mobileNavLinks = document.querySelectorAll("[data-mobile-nav]");
 
+    function setSidebarOpen(open) {
+      sidebar.classList.toggle("open", open);
+      sidebarBackdrop.classList.toggle("open", open);
+      sidebarBackdrop.setAttribute("aria-hidden", String(!open));
+      mobileMenu.setAttribute("aria-expanded", String(open));
+      document.body.style.overflow = open ? "hidden" : "";
+    }
+
+    mobileMenu.setAttribute("aria-expanded", "false");
     mobileMenu.addEventListener("click", () => {
-      sidebar.classList.toggle("open");
+      setSidebarOpen(!sidebar.classList.contains("open"));
     });
+
+    bottomMenu.addEventListener("click", () => setSidebarOpen(true));
+    sidebarClose.addEventListener("click", () => setSidebarOpen(false));
+    sidebarBackdrop.addEventListener("click", () => setSidebarOpen(false));
 
     document.querySelectorAll(".nav-link").forEach((link) => {
       link.addEventListener("click", () => {
-        if (window.innerWidth <= 920) sidebar.classList.remove("open");
+        if (window.innerWidth <= 920) setSidebarOpen(false);
       });
     });
 
-    document.addEventListener("click", (event) => {
-      if (
-        window.innerWidth <= 920 &&
-        sidebar.classList.contains("open") &&
-        !sidebar.contains(event.target) &&
-        !mobileMenu.contains(event.target)
-      ) {
-        sidebar.classList.remove("open");
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNavLinks.forEach((item) => item.classList.remove("active"));
+        link.classList.add("active");
+        setSidebarOpen(false);
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 920) setSidebarOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && sidebar.classList.contains("open")) {
+        setSidebarOpen(false);
       }
     });
+
+    window.medihimCloseMobileMenu = () => setSidebarOpen(false);
 
     window.addEventListener("popstate", () => {
       const match = location.hash.match(/^#notice-(\d+)$/);

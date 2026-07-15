@@ -6,7 +6,7 @@
   <meta name="description" content="메디힘 경영사항 공지, 성과 현황, 비용 현황 및 타운홀 자료를 통합 제공하는 사내 경영정보 대시보드" />
   <meta name="theme-color" content="#7b183f" />
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
-  <title>메디힘 경영정보센터 | 2026년 7월 타운홀 미팅 공지안</title>
+  <title>메디힘 경영정보센터 | Galaxy Fold 모바일 최적화</title>
 
   <style>
 
@@ -2513,6 +2513,233 @@
       }
     }
 
+
+    /* =========================================================
+       Galaxy Z Fold 6 커버 화면 FIT 보정
+       핵심: 첫 화면 점유율 축소, 정보 카드 2열화, 중복 바로가기 제거
+       ========================================================= */
+    @media (max-width: 480px) {
+      body:not(.auth-locked) {
+        padding-bottom: calc(64px + env(safe-area-inset-bottom));
+      }
+
+      .topbar {
+        min-height: calc(58px + env(safe-area-inset-top));
+      }
+
+      .mobile-menu {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+      }
+
+      .auth-logout {
+        min-width: 44px;
+        min-height: 42px;
+        padding: 0 10px;
+      }
+
+      .content {
+        width: calc(100% - 12px);
+        padding-top: 8px;
+        padding-bottom: 26px;
+      }
+
+      .hero {
+        padding: 20px 16px 16px;
+        border-radius: 16px;
+        box-shadow: 0 10px 28px rgba(57, 12, 34, 0.18);
+      }
+
+      .hero::before,
+      .hero::after {
+        display: none;
+      }
+
+      .hero-kicker {
+        margin-bottom: 9px;
+        padding: 5px 8px;
+        font-size: 0.57rem;
+        letter-spacing: 0.055em;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.4rem, 6.7vw, 1.62rem);
+        line-height: 1.24;
+        letter-spacing: -0.045em;
+      }
+
+      .hero h1 br {
+        display: none;
+      }
+
+      .hero p {
+        display: -webkit-box;
+        margin-top: 10px;
+        overflow: hidden;
+        font-size: 0.76rem;
+        line-height: 1.52;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+      }
+
+      .hero-principles {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        margin-top: 14px;
+      }
+
+      .hero-principle {
+        display: flex;
+        min-width: 0;
+        min-height: 66px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 5px;
+        text-align: center;
+      }
+
+      .hero-principle span {
+        margin: 0;
+        font-size: 0.57rem;
+      }
+
+      .hero-principle strong {
+        margin-top: 4px;
+        font-size: 0.69rem;
+        line-height: 1.35;
+      }
+
+      .section {
+        margin-top: 17px;
+      }
+
+      .section-head {
+        gap: 4px;
+        margin-bottom: 10px;
+      }
+
+      .section-head h2 {
+        font-size: 1.12rem;
+      }
+
+      .section-head p {
+        margin-top: 3px;
+        font-size: 0.72rem;
+        line-height: 1.45;
+      }
+
+      .status-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .status-card {
+        min-width: 0;
+        min-height: 126px;
+        padding: 13px;
+        border-radius: 14px;
+      }
+
+      .status-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+      }
+
+      .status-icon svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .status-label {
+        font-size: 0.67rem;
+      }
+
+      .status-value {
+        margin: 10px 0 3px;
+        font-size: 0.92rem;
+        line-height: 1.3;
+      }
+
+      .status-desc {
+        display: -webkit-box;
+        overflow: hidden;
+        font-size: 0.65rem;
+        line-height: 1.45;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+
+      /* 모바일 하단에 성과·비용 바로가기가 있으므로 중복 섹션은 숨김 */
+      #shortcuts {
+        display: none;
+      }
+
+      .board-toolbar {
+        top: calc(58px + env(safe-area-inset-top));
+      }
+
+      .mobile-bottom-nav {
+        min-height: calc(60px + env(safe-area-inset-bottom));
+        padding-top: 2px;
+      }
+
+      .mobile-bottom-link {
+        min-height: 56px;
+        gap: 2px;
+        font-size: 0.64rem;
+      }
+
+      .mobile-bottom-link svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .detail-topbar {
+        min-height: calc(58px + env(safe-area-inset-top));
+      }
+    }
+
+    /* 폴드 커버 화면이 특히 좁게 계산되는 환경 추가 보정 */
+    @media (max-width: 380px) {
+      .content {
+        width: calc(100% - 8px);
+      }
+
+      .hero {
+        padding: 18px 14px 14px;
+      }
+
+      .hero h1 {
+        font-size: 1.34rem;
+      }
+
+      .hero p {
+        font-size: 0.72rem;
+        -webkit-line-clamp: 2;
+      }
+
+      .hero-principle {
+        min-height: 61px;
+        padding: 7px 3px;
+      }
+
+      .hero-principle strong {
+        font-size: 0.64rem;
+      }
+
+      .status-card {
+        min-height: 118px;
+        padding: 11px;
+      }
+
+      .status-value {
+        font-size: 0.86rem;
+      }
+    }
+
     @media print {
       .sidebar,
       .topbar,
@@ -2658,8 +2885,8 @@
             <div class="hero-kicker">MEDIHIM MANAGEMENT CENTER</div>
             <h1>경영정보를 투명하게 공유하고,<br />실행의 방향을 하나로 정렬합니다.</h1>
             <p>
-              메디힘의 성과, 비용, 주요 의사결정 및 전사 공지를 한곳에서 확인하는 사내 경영정보 허브입니다.
-              필요한 정보는 적시에 공개하고, 모든 구성원이 목표 달성에 몰입할 수 있는 운영 기반을 구축합니다.
+              메디힘의 성과, 비용, 주요 의사결정과 전사 공지를 한곳에서 확인합니다.
+              필요한 정보를 적시에 공유하여 모든 구성원의 실행 방향을 정렬합니다.
             </p>
           </div>
 

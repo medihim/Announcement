@@ -2,6 +2,12 @@
 
 정적 GitHub Pages용 메디힘 경영정보 대시보드입니다.
 
+## LNB 바로가기
+
+- 성과 현황: `https://medihimdash.com`
+- 당월 비용: `https://spend.medihimdash.com`
+- 디딤돌 신청: `https://medihim.github.io/govfund/index.html` (새 창 열기)
+
 ## 브랜드 적용
 
 - 시스템 주색을 메디힘 브랜드 컬러 `#16A2B5`로 변경

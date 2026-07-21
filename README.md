@@ -7,7 +7,8 @@
 - 시스템 주색을 메디힘 브랜드 컬러 `#16A2B5`로 변경
 - 밝은 사이드바에 메디힘·IPPEO 로고를 별도 배경 박스 없이 나란히 배치
 - 데스크톱 LNB와 모바일 드로어에서 동일한 비율로 축소
-- 로고 원본은 `assets/medihim-logo-brandcolor.png`, `assets/ippeo-logo.png`에 저장
+- 로고 원본은 `assets/medihim-logo-brandcolor.png`, `assets/ippeo-logo-ko.png`에 저장
+- 이뻐 로고는 일본어 표기를 제외한 한글 전용 이미지이며, 원본 비율을 유지해 표시
 
 ## 접속 비밀번호
 

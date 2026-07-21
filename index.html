@@ -265,35 +265,80 @@
 
     .brand {
       display: flex;
-      gap: 12px;
       align-items: center;
+      width: 100%;
+      min-width: 0;
       padding: 2px 8px 26px;
     }
 
-    .brand-mark {
+    .brand-lockup {
+      display: flex;
+      width: min(100%, 176px);
+      height: 42px;
+      min-width: 0;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-logo-tile {
       display: grid;
       width: 42px;
       height: 42px;
+      flex: 0 0 42px;
       place-items: center;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 13px;
-      background: rgba(255, 255, 255, 0.12);
-      font-size: 0.8rem;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 5px 16px rgba(35, 4, 19, 0.16);
+    }
+
+    .brand-logo-medihim {
+      width: 31px;
+      height: 31px;
+      object-fit: contain;
+      filter: drop-shadow(0 1px 1px rgba(29, 43, 96, 0.12));
+    }
+
+    .brand-collaboration-mark {
+      display: grid;
+      width: 11px;
+      height: 28px;
+      flex: 0 0 11px;
+      place-items: center;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.69rem;
       font-weight: 900;
-      letter-spacing: -0.03em;
+      line-height: 1;
     }
 
-    .brand-copy strong {
-      display: block;
-      font-size: 1.05rem;
-      letter-spacing: -0.02em;
+    .brand-service {
+      display: grid;
+      min-width: 0;
+      align-content: center;
+      gap: 2px;
     }
 
-    .brand-copy span {
+    .brand-logo-ippeo {
       display: block;
-      margin-top: 2px;
-      color: rgba(255, 255, 255, 0.64);
-      font-size: 0.75rem;
+      width: 76px;
+      max-width: 100%;
+      height: 30px;
+      object-fit: contain;
+      object-position: left center;
+      filter: drop-shadow(0 1px 1px rgba(57, 0, 31, 0.25));
+    }
+
+    .brand-service span {
+      display: block;
+      overflow: hidden;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.61rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.01em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .nav-title {
@@ -1948,6 +1993,10 @@
         padding-right: 50px;
       }
 
+      .sidebar .brand-lockup {
+        width: min(100%, 176px);
+      }
+
       .sidebar-close {
         position: absolute;
         top: calc(14px + env(safe-area-inset-top));
@@ -3134,11 +3183,16 @@
 
   <div class="app-shell">
     <aside class="sidebar" id="sidebar" aria-label="주요 메뉴">
-      <a class="brand" href="#home" aria-label="메디힘 경영정보센터 홈">
-        <div class="brand-mark">MH</div>
-        <div class="brand-copy">
-          <strong>메디힘</strong>
-          <span>경영정보센터</span>
+      <a class="brand" href="#home" aria-label="메디힘·이뻐 경영정보센터 홈">
+        <div class="brand-lockup" aria-hidden="true">
+          <span class="brand-logo-tile">
+            <img class="brand-logo-medihim" src="assets/medihim-logo.png" alt="" width="31" height="31" />
+          </span>
+          <span class="brand-collaboration-mark">X</span>
+          <span class="brand-service">
+            <img class="brand-logo-ippeo" src="assets/ippeo-logo.png" alt="" width="76" height="30" />
+            <span>경영정보센터</span>
+          </span>
         </div>
       </a>
 

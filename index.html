@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="메디힘 경영사항 공지, 성과 현황, 비용 현황 및 타운홀 자료를 통합 제공하는 사내 경영정보 대시보드" />
-  <meta name="theme-color" content="#7b183f" />
+  <meta name="theme-color" content="#16a2b5" />
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
   <title>메디힘 경영정보센터 | Galaxy Fold 상세 페이지 최적화</title>
 
@@ -31,7 +31,7 @@
       padding: 24px;
       background:
         radial-gradient(circle at 80% 15%, rgba(255,255,255,0.14), transparent 25%),
-        linear-gradient(135deg, #4d0d2a 0%, #74163e 55%, #8f1d4f 100%);
+        linear-gradient(135deg, #075f6b 0%, #0e8798 55%, #16a2b5 100%);
     }
 
     body:not(.auth-locked) .auth-screen {
@@ -44,20 +44,24 @@
       border: 1px solid rgba(255,255,255,0.16);
       border-radius: 22px;
       background: rgba(255,255,255,0.97);
-      box-shadow: 0 30px 90px rgba(33,6,19,0.3);
+      box-shadow: 0 30px 90px rgba(4, 74, 84, 0.3);
     }
 
     .auth-logo {
-      display: grid;
-      width: 54px;
-      height: 54px;
-      place-items: center;
+      display: flex;
+      width: 170px;
+      height: 40px;
+      align-items: center;
       margin-bottom: 20px;
-      border-radius: 15px;
-      color: #ffffff;
-      background: var(--primary);
-      font-size: 0.9rem;
-      font-weight: 900;
+    }
+
+    .auth-logo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 40px;
+      object-fit: contain;
+      object-position: left center;
     }
 
     .auth-card h1 {
@@ -99,8 +103,8 @@
     }
 
     .auth-input:focus {
-      border-color: #c46a91;
-      box-shadow: 0 0 0 4px rgba(143,29,79,0.09);
+      border-color: #58c2cf;
+      box-shadow: 0 0 0 4px rgba(22, 162, 181, 0.12);
     }
 
     .auth-toggle {
@@ -126,7 +130,7 @@
       border: 0;
       border-radius: 12px;
       color: #ffffff;
-      background: var(--primary);
+      background: var(--primary-dark);
       font-weight: 900;
       cursor: pointer;
     }
@@ -184,9 +188,9 @@
       --text-soft: #475467;
       --muted: #667085;
       --line: #e1e6ec;
-      --primary: #8f1d4f;
-      --primary-dark: #641238;
-      --primary-soft: #f9eaf1;
+      --primary: #16a2b5;
+      --primary-dark: #0b7181;
+      --primary-soft: #e7f8fa;
       --navy: #17324d;
       --blue: #245d87;
       --green: #24765a;
@@ -256,11 +260,12 @@
       width: var(--sidebar);
       flex-direction: column;
       padding: 26px 18px;
-      color: #ffffff;
+      color: var(--text);
       background:
-        radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.13), transparent 24%),
-        linear-gradient(180deg, #71153c 0%, #4d0d2a 100%);
-      box-shadow: 10px 0 34px rgba(45, 8, 26, 0.14);
+        radial-gradient(circle at 15% 10%, rgba(22, 162, 181, 0.09), transparent 27%),
+        linear-gradient(180deg, #ffffff 0%, #f4fbfc 100%);
+      border-right: 1px solid #d8ecef;
+      box-shadow: 10px 0 34px rgba(11, 113, 129, 0.1);
     }
 
     .brand {
@@ -272,30 +277,43 @@
     }
 
     .brand-lockup {
-      display: grid;
+      display: flex;
       width: min(100%, 195px);
       min-height: 42px;
       min-width: 0;
-      place-items: center;
-      padding: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 5px 16px rgba(35, 4, 19, 0.16);
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
-    .brand-combination-logo {
+    .brand-logo-medihim {
       display: block;
-      width: 181px;
-      max-width: 100%;
+      width: 125px;
+      max-width: calc(100% - 68px);
       height: auto;
-      max-height: 28px;
+      max-height: 30px;
       object-fit: contain;
+    }
+
+    .brand-logo-ippeo-crop {
+      display: block;
+      width: 58px;
+      height: 24px;
+      flex: 0 0 58px;
+      overflow: hidden;
+    }
+
+    .brand-logo-ippeo {
+      display: block;
+      width: 58px;
+      height: 54px;
+      object-fit: fill;
+      transform: translateY(-15px);
     }
 
     .nav-title {
       margin: 8px 10px 10px;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(11, 113, 129, 0.58);
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.12em;
@@ -312,7 +330,7 @@
       align-items: center;
       padding: 12px 13px;
       border-radius: 11px;
-      color: rgba(255, 255, 255, 0.76);
+      color: #52626b;
       font-size: 0.91rem;
       font-weight: 700;
       transition: 0.2s ease;
@@ -320,8 +338,8 @@
 
     .nav-link:hover,
     .nav-link.active {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.13);
+      color: var(--primary-dark);
+      background: var(--primary-soft);
     }
 
     .nav-link svg {
@@ -333,20 +351,21 @@
     .sidebar-info {
       margin-top: auto;
       padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
+      border: 1px solid #c7e7eb;
       border-radius: 14px;
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(231, 248, 250, 0.82);
     }
 
     .sidebar-info strong {
       display: block;
       margin-bottom: 6px;
       font-size: 0.85rem;
+      color: var(--primary-dark);
     }
 
     .sidebar-info p {
       margin: 0;
-      color: rgba(255, 255, 255, 0.62);
+      color: #52626b;
       font-size: 0.77rem;
       line-height: 1.55;
     }
@@ -488,7 +507,7 @@
       color: #ffffff;
       background:
         radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.18), transparent 24%),
-        linear-gradient(135deg, #5b0f31 0%, #8f1d4f 62%, #a72a5d 100%);
+        linear-gradient(135deg, #075f6b 0%, #0b7181 58%, #16a2b5 100%);
       box-shadow: var(--shadow);
     }
 
@@ -813,8 +832,8 @@
     }
 
     .search-input:focus {
-      border-color: #d595b2;
-      box-shadow: 0 0 0 3px rgba(143, 29, 79, 0.08);
+      border-color: #79cdd6;
+      box-shadow: 0 0 0 3px rgba(22, 162, 181, 0.1);
     }
 
     .board-list {
@@ -841,11 +860,11 @@
     }
 
     .notice-row.is-important {
-      background: #fffafb;
+      background: #f5fcfd;
     }
 
     .notice-row.is-important:hover {
-      background: #fff5f8;
+      background: #eaf9fb;
     }
 
     .category {
@@ -1255,7 +1274,7 @@
     .preview-button.primary {
       border-color: var(--primary);
       color: #ffffff;
-      background: var(--primary);
+      background: var(--primary-dark);
     }
 
     .preview-button.primary:hover {
@@ -1294,9 +1313,9 @@
     .detail-callout {
       margin: 18px 0 24px;
       padding: 18px 20px;
-      border: 1px solid #efd1de;
+      border: 1px solid #bde6ea;
       border-radius: 14px;
-      background: #fff7fa;
+      background: #f4fbfc;
     }
 
     .detail-callout strong {
@@ -1402,9 +1421,9 @@
       align-items: flex-start;
       margin-top: 20px;
       padding: 19px;
-      border: 1px solid #efd1de;
+      border: 1px solid #bde6ea;
       border-radius: 14px;
-      background: linear-gradient(135deg, #f8eaf0, #fff7fa);
+      background: linear-gradient(135deg, #e7f8fa, #f7fdfe);
     }
 
     .detail-lunch-icon {
@@ -1957,10 +1976,10 @@
         width: 46px;
         height: 46px;
         place-items: center;
-        border: 1px solid rgba(255,255,255,0.18);
+        border: 1px solid #c7e7eb;
         border-radius: 13px;
-        color: #ffffff;
-        background: rgba(255,255,255,0.11);
+        color: var(--primary-dark);
+        background: rgba(255, 255, 255, 0.94);
         cursor: pointer;
       }
 
@@ -2335,8 +2354,8 @@
       }
 
       .notice-row.is-important {
-        border-color: #e7b7cb;
-        background: #fffafb;
+        border-color: #a9dde3;
+        background: #f5fcfd;
       }
 
       .notice-row:active {
@@ -3098,7 +3117,9 @@
 
   <section class="auth-screen" id="authScreen" aria-labelledby="authTitle">
     <form class="auth-card" id="authForm" autocomplete="off">
-      <div class="auth-logo">MH</div>
+      <div class="auth-logo">
+        <img src="assets/medihim-logo-brandcolor.png" alt="메디힘" width="170" height="40" />
+      </div>
       <h1 id="authTitle">메디힘 경영정보센터</h1>
       <p>사내 경영정보 열람을 위해 비밀번호를 입력해 주세요.</p>
 
@@ -3137,7 +3158,10 @@
     <aside class="sidebar" id="sidebar" aria-label="주요 메뉴">
       <a class="brand" href="#home" aria-label="메디힘·이뻐 경영정보센터 홈">
         <div class="brand-lockup" aria-hidden="true">
-          <img class="brand-combination-logo" src="assets/medihim-ippeo-combination.png" alt="" width="181" height="25" />
+          <img class="brand-logo-medihim" src="assets/medihim-logo-brandcolor.png" alt="" width="125" height="29" />
+          <span class="brand-logo-ippeo-crop">
+            <img class="brand-logo-ippeo" src="assets/ippeo-logo.png" alt="" width="58" height="54" />
+          </span>
         </div>
       </a>
 
